@@ -1,0 +1,24 @@
+# virtual environments created by the setup launchers
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# app output (autosave, exports, CLI output, synthetic demo data)
+output/
+synthetic_demo/
+marker_session.json
+*.tmp
+
+# editors / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

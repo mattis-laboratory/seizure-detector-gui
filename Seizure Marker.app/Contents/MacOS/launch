@@ -1,0 +1,19 @@
+#!/bin/bash
+# Double-click launcher for the Seizure On/Off Marker (macOS app bundle).
+# Finds the repository folder that contains this .app and runs the app from
+# the .venv created by launchers/setup_mac.command.
+HERE="$(cd "$(dirname "$0")/../../.." && pwd)"
+LOG="$HOME/Library/Logs/SeizureMarker.log"
+cd "$HERE" || exit 1
+if [ ! -x ".venv/bin/python" ]; then
+  osascript -e 'display alert "Seizure Marker is not set up yet" message "Double-click launchers/setup_mac.command once, then try again."' >/dev/null
+  exit 1
+fi
+unset MPLBACKEND
+echo "=== $(date) launching from $HERE ===" >>"$LOG"
+".venv/bin/python" -m seizure_marker >>"$LOG" 2>&1
+RC=$?
+if [ $RC -ne 0 ]; then
+  osascript -e "display alert \"Seizure Marker failed to start (exit $RC)\" message \"Details: $LOG\"" >/dev/null
+fi
+exit $RC

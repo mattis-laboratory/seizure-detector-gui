@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seizure-marker"
+version = "1.0.0"
+description = "Semi-automated seizure onset/offset marking for Open Ephys EEG: detector + interactive review GUI + Excel export"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [{ name = "Mattis Lab" }]
+keywords = ["EEG", "ECoG", "seizure", "epilepsy", "Open Ephys", "PyQt6"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "PyQt6>=6.5",
+    "pyqtgraph>=0.13.3",
+    "matplotlib>=3.8",
+    "openpyxl>=3.1",
+    "pillow>=10",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+seizure-marker-cli = "seizure_marker.detector:main"
+seizure-marker-synthetic = "seizure_marker.synthetic:main"
+
+[project.gui-scripts]
+seizure-marker = "seizure_marker.app:main"
+
+[tool.setuptools.packages.find]
+include = ["seizure_marker*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
