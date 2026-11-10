@@ -240,7 +240,4 @@ docs/                   user guide, detector details, screenshot
 
 Tests run in GitHub Actions on Ubuntu, macOS and Windows (`.github/workflows/ci.yml`).
 
-## License
-
-MIT, see [LICENSE](LICENSE). Developed in the Mattis Lab for Scn1a / cholinergic
-mouse ECoG studies.
+Developed in the Mattis Lab for Scn1a / cholinergic mouse ECoG studies.

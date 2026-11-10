@@ -7,7 +7,6 @@ name = "seizure-marker"
 version = "1.0.0"
 description = "Semi-automated seizure onset/offset marking for Open Ephys EEG: detector + interactive review GUI + Excel export"
 readme = "README.md"
-license = { file = "LICENSE" }
 requires-python = ">=3.10"
 authors = [{ name = "Mattis Lab" }]
 keywords = ["EEG", "ECoG", "seizure", "epilepsy", "Open Ephys", "PyQt6"]
