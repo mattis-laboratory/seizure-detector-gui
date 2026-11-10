@@ -10,8 +10,7 @@ sheet that documents exactly which settings were used.
 
 ![Seizure Marker window](docs/screenshot.png)
 
-Works on macOS and Windows (and Linux). No cloud, no account, no internet after
-install. Everything runs locally in Python.
+Works on macOS and Windows (and Linux). Runs locally in Python.
 
 ## Contents
 
